@@ -51,11 +51,17 @@ class NavBar extends Component {
     };
     return (
       <>
-        <div id="navbarWrapper" style={this.state.show ? active : hidden}>
+        <div id={Style.navbarWrapper} style={this.state.show ? active : hidden}>
           <div className={Style.navbar}>
-            <a href="#home">Home</a>
-            <a href="#news">News</a>
-            <a href="#contact">Contact</a>
+            <a className={Style.ATags} href="#home">
+              Home&nbsp;
+            </a>
+            <a className={Style.ATags} href="#news">
+              News&nbsp;
+            </a>
+            <a className={Style.ATags} href="#contact">
+              Contact&nbsp;
+            </a>
           </div>
         </div>
       </>
