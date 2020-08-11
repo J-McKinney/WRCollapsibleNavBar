@@ -32,18 +32,29 @@ class NavBar extends Component {
     //   console.log(this.state.show)
     // }
 
-    // if (this.state.show === false) {
-    //   console.log("Disappear!!!");
-    // } else if (this.state.show === true) {
-    //   console.log("Reappear!!!");
-    // }
-
+    if (this.state.show === false) {
+      console.log("NavBar Disappear!!!");
+    } else if (this.state.show === true) {
+      console.log("NavBar Reappear!!!");
+    }
   };
 
   render() {
+    const active = {
+      backgroundColor: "Red",
+      position: "sticky",
+      height: "200px",
+    };
+
+    const hidden = {
+      backgroundColor: "Green",
+      position: "sticky",
+      height: "200px",
+    };
+
     return (
       <>
-        <div className="navbarWrapper">
+        <div id="navbarWrapper" style={this.state.show ? active : hidden}>
           <div className={Style.navbar}>
             <a href="#home">Home</a>
             <a href="#news">News</a>
