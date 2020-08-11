@@ -42,14 +42,16 @@ class NavBar extends Component {
   render() {
     const active = {
       backgroundColor: "Red",
-      position: "sticky",
-      height: "200px",
+      position: "fixed",
+      height: "50px",
+      width: "100%",
     };
 
     const hidden = {
       backgroundColor: "Green",
       position: "sticky",
-      height: "200px",
+      height: "50px",
+      width: "100%",
     };
 
     return (
