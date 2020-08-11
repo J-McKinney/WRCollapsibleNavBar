@@ -8,29 +8,20 @@ class NavBar extends Component {
   };
 
   componentDidMount() {
-    // console.log("Did Mount: ", this.state.scrollPos);
     window.addEventListener("scroll", this.onscroll);
   }
   componentDidUpdate() {
     // console.log("Did Update: ", this.state.scrollPos);
   }
   componentWillUnmount() {
-    // console.log("Will Unmount: ", this.state.scrollPos);
     window.removeEventListener("scroll", this.onscroll);
   }
 
   onscroll = () => {
-    // console.log("Scrolling: ", this.state.scrollPos);
     this.setState({
       scrollPos: document.body.getBoundingClientRect().top,
       show: document.body.getBoundingClientRect().top > this.state.scrollPos,
     });
-
-    // if (this.state.scrollPos < -50) {
-    //   console.log("Disappear!!!");
-    // } else {
-    //   console.log(this.state.show)
-    // }
 
     if (this.state.show === false) {
       console.log("NavBar Disappear!!!");
@@ -41,17 +32,24 @@ class NavBar extends Component {
 
   render() {
     const active = {
-      backgroundColor: "Red",
+      zIndex: "1000",
+      backgroundColor: "#61dafb",
       position: "fixed",
       height: "50px",
       width: "100%",
+      visibility: "visible",
+      transition: "all 200ms ease-in",
     };
 
     const hidden = {
-      backgroundColor: "Green",
-      position: "sticky",
+      zIndex: "1000",
+      backgroundColor: "#61dafb",
+      position: "fixed",
       height: "50px",
       width: "100%",
+      visibility: "hidden",
+      transition: "all 200ms ease-out",
+      transform: "translate(0, -100%)",
     };
 
     return (
