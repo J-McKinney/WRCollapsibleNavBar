@@ -20,12 +20,24 @@ class NavBar extends Component {
   }
 
   onscroll = () => {
-    console.log("Scrolling: ", this.state.scrollPos);
-    const { scrollPos } = this.state;
+    // console.log("Scrolling: ", this.state.scrollPos);
     this.setState({
       scrollPos: document.body.getBoundingClientRect().top,
-      show: document.body.getBoundingClientRect().top > scrollPos,
+      show: document.body.getBoundingClientRect().top > this.state.scrollPos,
     });
+
+    // if (this.state.scrollPos < -50) {
+    //   console.log("Disappear!!!");
+    // } else {
+    //   console.log(this.state.show)
+    // }
+
+    // if (this.state.show === false) {
+    //   console.log("Disappear!!!");
+    // } else if (this.state.show === true) {
+    //   console.log("Reappear!!!");
+    // }
+
   };
 
   render() {
