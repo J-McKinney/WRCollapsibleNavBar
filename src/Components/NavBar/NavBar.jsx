@@ -22,7 +22,6 @@ class NavBar extends Component {
       scrollPos: document.body.getBoundingClientRect().top,
       show: document.body.getBoundingClientRect().top > this.state.scrollPos,
     });
-
     if (this.state.show === false) {
       console.log("NavBar Disappear!!!");
     } else if (this.state.show === true) {
@@ -40,7 +39,6 @@ class NavBar extends Component {
       visibility: "visible",
       transition: "all 200ms ease-in",
     };
-
     const hidden = {
       zIndex: "1000",
       backgroundColor: "#61dafb",
@@ -51,7 +49,6 @@ class NavBar extends Component {
       transition: "all 200ms ease-out",
       transform: "translate(0, -100%)",
     };
-
     return (
       <>
         <div id="navbarWrapper" style={this.state.show ? active : hidden}>
