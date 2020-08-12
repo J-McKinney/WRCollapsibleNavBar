@@ -10,23 +10,16 @@ class NavBar extends Component {
   componentDidMount() {
     window.addEventListener("scroll", this.onscroll);
   }
-  componentDidUpdate() {
-    // console.log("Did Update: ", this.state.scrollPos);
-  }
   componentWillUnmount() {
     window.removeEventListener("scroll", this.onscroll);
   }
+  componentDidUpdate() {}
 
   onscroll = () => {
     this.setState({
       scrollPos: document.body.getBoundingClientRect().top,
       show: document.body.getBoundingClientRect().top > this.state.scrollPos,
     });
-    if (this.state.show === false) {
-      console.log("NavBar Disappear!!!");
-    } else if (this.state.show === true) {
-      console.log("NavBar Reappear!!!");
-    }
   };
 
   render() {
